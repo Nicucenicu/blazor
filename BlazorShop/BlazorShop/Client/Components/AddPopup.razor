@@ -1,0 +1,71 @@
+﻿@using BlazorShop.Shared
+@inject HttpClient Http
+
+@{
+    var showClass = IsVisible ? "d-block" : "d-none";
+}
+
+<div class="toast-container p-3 @showClass" data-bs-autohide="true" data-bs-delay="5000">
+    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">@HeaderText</strong>
+            <button type="button" class="btn-close" aria-label="Close" @onclick="Close"></button>
+        </div>
+
+            <form class="mt-5" onsubmit="return false;">
+                <div class="input-group input-group-md mb-2">
+                    <span class="input-group-text">Name</span>
+                    <input type="text" class="form-control" autocomplete="off" required @bind-value="newprod.Name" />
+                </div>
+                <div class="input-group input-group-md mb-2">
+                    <span class="input-group-text">Price</span>
+                    <input type="number" class="form-control" autocomplete="off" required @bind-value="newprod.Price" />
+                </div>
+                <div class="input-group input-group-md mb-2">
+                    <span class="input-group-text">Stoc</span>
+                    <input type="number" class="form-control" autocomplete="off" required @bind-value="newprod.Stoc" />
+                </div>
+                    <button class="btn btn-success" @onclick="Add">Save</button>
+                    <button class="btn btn-primary" @onclick="Close">Cancel</button>
+            </form>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Product? newprod { get; set; }
+
+    [Parameter]
+    public bool IsVisible { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> IsVisibleChanged { get; set; }
+
+    [Parameter]
+    public string? HeaderText { get; set; }
+
+    public void Show( string headerText = "")
+    {
+        HeaderText = headerText;
+        IsVisible = true;
+        StateHasChanged();
+    }
+
+    private void Close()
+    {
+        HeaderText = string.Empty;
+        IsVisible = false;
+        StateHasChanged();
+    }
+    private async Task Add()
+    {
+        using (var msg = await Http.PostAsJsonAsync<Product>("/api/products", newprod))
+        {
+            if (msg.IsSuccessStatusCode)
+            {
+                newprod.Name = "";
+                newprod.Price = newprod.Stoc = null;
+            }
+        }
+    }
+}

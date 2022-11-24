@@ -1,0 +1,112 @@
+﻿@page "/products"
+@inject HttpClient Http
+@using BlazorShop.Shared
+@using BlazorShop.Client.Components
+@using System.Reflection
+
+<h1>Products</h1>
+
+<form onsubmit="return false;">
+    <div class="input-group input-group-md mb-2">
+        <span class="input-group-text">Search by Name</span>
+        <input type="text" class="form-control" @bind-value="filter" />
+        <button class="btn btn-primary" @onclick="Search">Search</button>
+    </div>
+</form>
+<AddPopup newprod="prod" @ref="popupRef" />
+
+@if (prods == null)
+{
+    <p><em>Loading...</em></p>
+}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stoc</th>
+                <th>
+                    <button class="btn btn-success" @onclick="RedirectPage">Add product</button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var prod in prods)
+            {
+                    <tr>
+                        <td>@prod.Name</td>
+                        <td>@prod.Price</td>
+                        <td>@prod.Stoc</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger" @onclick="@(() => Delete(prod.Id))">Delete</button>
+                            <button class="btn btn-success" @onclick="EditPage">Edit</button>
+                        </td>
+                    </tr>
+}
+        </tbody>
+    </table>
+
+
+@code {
+    private AddPopup popupRef;
+
+    private void RedirectPage()
+    {
+        // Shows the popup at the center of the screen
+        popupRef.Show("Add product");
+    }
+    private void EditPage()
+    {
+        
+        // Shows the popup at the center of the screen
+        popupRef.Show("Edit product");
+    }
+
+    private List<Product> prods;
+    private Product prod = new Product();
+    private string filter;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        prods = await Http.GetFromJsonAsync<List<Product>>("/api/products/list");
+    }
+
+    private async Task Search()
+    {
+        prods = await Http.GetFromJsonAsync<List<Product>>($"/api/products?Name={filter}");
+    }
+
+
+    private async Task Save(Product prod)
+    {
+        //PropertyInfo pinfo = typeof(Product).GetProperty(propField);
+        //pinfo.SetValue(prod, e.Value);
+
+        using (var msg = await Http.PutAsJsonAsync<Product>($"/api/products/{prod.Id}", prod))
+        {
+            if (msg.IsSuccessStatusCode)
+            {
+            }
+            else
+            {
+                // DO SOMETHING
+            }
+        }
+    }
+
+    private async Task Delete(int id)
+    {
+        using (var msg = await Http.DeleteAsync($"/api/products/{id}"))
+        {
+            if (msg.IsSuccessStatusCode)
+            {
+                int i;
+                for (i = 0; i < prods.Count && prods[i].Id != id; i++) ;
+                prods.RemoveAt(i);
+            }
+        }
+    }
+}
