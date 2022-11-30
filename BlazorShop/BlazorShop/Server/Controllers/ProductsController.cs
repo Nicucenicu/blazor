@@ -21,7 +21,7 @@ namespace BlazorShop.Server.Controllers
           }
 
           [HttpPut("{id}")]
-          public async Task<Product> Edit(int id, [FromBody] Product prod)
+          public async Task<Product> Edit(int id, Product prod)
           {
               return await _shopService.Edit(id, prod);
           }
@@ -29,21 +29,13 @@ namespace BlazorShop.Server.Controllers
           [HttpDelete("{id}")]
           public async Task<Product> Delete(int id)
           {
-               var delete = await _db.Product.FindAsync(id);
-               if (delete != null)
-               {
-                    _db.Product.Remove(delete);
-                    await _db.SaveChangesAsync();
-               }
-               return delete;
+               return await _shopService.Delete(id);
           }
 
           [HttpPost]
-          public async Task<Product> Post([FromBody] Product create)
+          public async Task<Product> Post( Product create)
           {
-               await _db.Product.AddAsync(create);
-               await _db.SaveChangesAsync();
-               return create;
+               return await _shopService.Post(create);
           }
 
           [HttpGet]

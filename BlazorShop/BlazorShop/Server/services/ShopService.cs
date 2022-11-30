@@ -1,4 +1,5 @@
 ﻿using BlazorShop.Shared;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorShop.Server.services
 {
@@ -22,6 +23,22 @@ namespace BlazorShop.Server.services
                     await db.SaveChangesAsync();
                }
                return product;
+          }
+          public async Task<Product> Delete(int id)
+          {
+               var delete = await db.Product.FindAsync(id);
+               if (delete != null)
+               {
+                    db.Product.Remove(delete);
+                    await db.SaveChangesAsync();
+               }
+               return delete;
+          }
+          public async Task<Product> Post(Product create)
+          {
+               await db.Product.AddAsync(create);
+               await db.SaveChangesAsync();
+               return create;
           }
      }
 }

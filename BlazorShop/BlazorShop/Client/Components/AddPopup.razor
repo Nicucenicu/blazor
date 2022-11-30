@@ -12,31 +12,32 @@
             <button type="button" class="btn-close" aria-label="Close" @onclick="Close"></button>
         </div>
 
-            <form class="mt-5" onsubmit="return false;">
-                <div class="input-group input-group-md mb-2">
-                    <span class="input-group-text">Name</span>
-                    <input type="text" class="form-control" autocomplete="off" required @bind-value="newprod.Name" />
-                </div>
-                <div class="input-group input-group-md mb-2">
-                    <span class="input-group-text">Price</span>
-                    <input type="number" class="form-control" autocomplete="off" required @bind-value="newprod.Price" />
-                </div>
-                <div class="input-group input-group-md mb-2">
-                    <span class="input-group-text">Stoc</span>
-                    <input type="number" class="form-control" autocomplete="off" required @bind-value="newprod.Stoc" />
-                </div>
-                    <button class="btn btn-success" @onclick="Add">Save</button>
-                    <button class="btn btn-primary" @onclick="Close">Cancel</button>
-            </form>
+        <form class="mt-5">
+
+            <div class="input-group input-group-md mb-2">
+                <span class="input-group-text">Name</span>
+                <input type="text" class="form-control" placeholder="Nume produs" required @bind-value=@newprod.Name />
+            </div>
+            <div class="input-group input-group-md mb-2">
+                <span class="input-group-text">Price</span>
+                <input type="number" class="form-control" placeholder="Pret produs" required @bind-value=@newprod.Price />
+            </div>
+            <div class="input-group input-group-md mb-2">
+                <span class="input-group-text ">Stoc</span>
+                <input type="number" class="form-control" placeholder="Stoc produs" required @bind-value=@newprod.Stoc />
+            </div>
+            <button class="btn btn-success" @onclick="@(() => Add(newprod))">Save</button>
+            <button class="btn btn-primary" @onclick="Close">Cancel</button>
+        </form>
     </div>
 </div>
 
 @code {
     [Parameter]
-    public Product? newprod { get; set; }
+    public Product newprod { get; set; }
 
     [Parameter]
-    public bool IsVisible { get; set; }
+    public bool IsVisible { get; set; } = false;
 
     [Parameter]
     public EventCallback<bool> IsVisibleChanged { get; set; }
@@ -44,11 +45,13 @@
     [Parameter]
     public string? HeaderText { get; set; }
 
-    public void Show( string headerText = "")
+
+    public void Show(string headerText = "")
     {
         HeaderText = headerText;
         IsVisible = true;
         StateHasChanged();
+
     }
 
     private void Close()
@@ -57,15 +60,28 @@
         IsVisible = false;
         StateHasChanged();
     }
-    private async Task Add()
+    private async Task Add(Product product)
     {
-        using (var msg = await Http.PostAsJsonAsync<Product>("/api/products", newprod))
+        if (product.Id > 0)
         {
-            if (msg.IsSuccessStatusCode)
-            {
-                newprod.Name = "";
-                newprod.Price = newprod.Stoc = null;
-            }
+            await Http.PutAsJsonAsync<Product>($"/api/products/{product.Id}", product);
         }
+        else
+        {
+            using (var msg = await Http.PostAsJsonAsync<Product>("/api/products", product))
+
+                if (msg.IsSuccessStatusCode)
+                {
+                    product.Name = "";
+                    product.Price = product.Stoc = null;
+                }
+        }
+    }
+    private async Task Save(Product prod)
+    {
+        //PropertyInfo pinfo = typeof(Product).GetProperty(propField);
+        //pinfo.SetValue(prod, e.Value);
+
+        await Http.PutAsJsonAsync<Product>($"/api/products/{prod.Id}", prod);
     }
 }

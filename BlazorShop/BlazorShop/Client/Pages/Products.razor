@@ -20,32 +20,33 @@
     <p><em>Loading...</em></p>
 }
 
-    <table class="table">
-        <thead>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stoc</th>
+            <th>
+                <button class="btn btn-success" @onclick="RedirectPage">Add product</button>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prod in prods)
+        {
             <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Stoc</th>
-                <th>
-                    <button class="btn btn-success" @onclick="RedirectPage">Add product</button>
-                </th>
+                <td>@prod.Name</td>
+                <td>@prod.Price</td>
+                <td>@prod.Stoc</td>
+                <td>
+                    <button class="btn btn-sm btn-danger" @onclick="@(() => Delete(prod.Id))">Delete</button>
+                    <button class="btn btn-success" @onclick="@(() => EditPage(prod))">Edit</button>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach(var prod in prods)
-            {
-                    <tr>
-                        <td>@prod.Name</td>
-                        <td>@prod.Price</td>
-                        <td>@prod.Stoc</td>
-                        <td>
-                            <button class="btn btn-sm btn-danger" @onclick="@(() => Delete(prod.Id))">Delete</button>
-                            <button class="btn btn-success" @onclick="EditPage">Edit</button>
-                        </td>
-                    </tr>
-}
-        </tbody>
-    </table>
+        }
+        
+    </tbody>
+</table>
 
 
 @code {
@@ -54,13 +55,13 @@
     private void RedirectPage()
     {
         // Shows the popup at the center of the screen
-        popupRef.Show("Add product");
+        popupRef.Show( "Add product");
     }
-    private void EditPage()
+    private void EditPage(Product product)
     {
-        
-        // Shows the popup at the center of the screen
-        popupRef.Show("Edit product");
+        prod = product;
+         //Shows the popup at the center of the screen
+        popupRef.Show( "Edit product");
     }
 
     private List<Product> prods;
@@ -78,7 +79,10 @@
     {
         prods = await Http.GetFromJsonAsync<List<Product>>($"/api/products?Name={filter}");
     }
-
+    private async Task GetById(int id)
+    {
+        prod = await Http.GetFromJsonAsync<Product>($"/api/products/{id}");
+    }
 
     private async Task Save(Product prod)
     {
@@ -103,10 +107,9 @@
         {
             if (msg.IsSuccessStatusCode)
             {
-                int i;
-                for (i = 0; i < prods.Count && prods[i].Id != id; i++) ;
-                prods.RemoveAt(i);
+                prods.RemoveAt(id);
             }
         }
     }
+
 }

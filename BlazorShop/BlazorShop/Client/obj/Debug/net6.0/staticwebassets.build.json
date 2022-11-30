@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ktsSZIsw/R6lt8HsnDk61vGUIeQV1M5t5PtbAGsolNE=",
+  "Hash": "P5k2UPdubwR+swZs2kLyupGK/WrFkPBP5OGd4T4yg3o=",
   "Source": "BlazorShop.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -238,6 +238,23 @@
       "OriginalItemSpec": "C:\\Users\\cabac\\.nuget\\packages\\humanizer.core\\2.8.26\\lib\\netstandard2.0\\Humanizer.dll"
     },
     {
+      "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
+      "SourceId": "BlazorShop.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt.dat",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "native",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\cabac\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.10\\runtimes\\browser-wasm\\native\\icudt.dat"
+    },
+    {
       "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt_CJK.dat",
       "SourceId": "BlazorShop.Client",
       "SourceType": "Computed",
@@ -287,23 +304,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\cabac\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.10\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
-    },
-    {
-      "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
-      "SourceId": "BlazorShop.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt.dat",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "native",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\cabac\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.10\\runtimes\\browser-wasm\\native\\icudt.dat"
     },
     {
       "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
@@ -7803,23 +7803,6 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
-      "SourceId": "BlazorShop.Client",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "css/open-iconic/FONT-LICENSE",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
-    },
-    {
       "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "BlazorShop.Client",
       "SourceType": "Discovered",
@@ -7920,6 +7903,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "SourceId": "BlazorShop.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/open-iconic/FONT-LICENSE",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
