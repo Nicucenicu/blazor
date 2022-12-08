@@ -22,14 +22,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Components/AddPopup.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRQb3B1cC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Components/DataRepeaterComponent.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRhUmVwZWF0ZXJDb21wb25lbnQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Components/EditPopup.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xFZGl0UG9wdXAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -57,6 +49,10 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Components/AddPopup.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRQb3B1cC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-cpp42vnm7p
 
 [D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

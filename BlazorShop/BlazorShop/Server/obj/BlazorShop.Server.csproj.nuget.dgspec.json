@@ -50,7 +50,7 @@
           "dependencies": {
             "Blazored.Modal": {
               "target": "Package",
-              "version": "[7.1.0, )"
+              "version": "[6.0.1, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
@@ -156,7 +156,7 @@
           "dependencies": {
             "Blazored.Modal": {
               "target": "Package",
-              "version": "[7.1.0, )"
+              "version": "[6.0.1, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly.Server": {
               "target": "Package",
@@ -240,6 +240,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Blazored.Modal": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.10, )"

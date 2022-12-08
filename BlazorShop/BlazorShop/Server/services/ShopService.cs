@@ -20,6 +20,7 @@ namespace BlazorShop.Server.services
                     product.Name = prod.Name;
                     product.Price = prod.Price;
                     product.Stoc = prod.Stoc;
+
                     await db.SaveChangesAsync();
                }
                return product;

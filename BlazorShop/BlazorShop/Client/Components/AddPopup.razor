@@ -1,37 +1,48 @@
 ﻿@using BlazorShop.Shared
 @inject HttpClient Http
 
-@{
-    var showClass = IsVisible ? "d-block" : "d-none";
-}
+@if (IsVisible)
+{
+    <div class="backgroundPopup">
+        <div class="popupCreate">
+            <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">@HeaderText</strong>
+                    <button type="button" class="btn-close" aria-label="Close" @onclick="Close"></button>
+                </div>
 
-<div class="toast-container p-3 @showClass" data-bs-autohide="true" data-bs-delay="5000">
-    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <strong class="me-auto">@HeaderText</strong>
-            <button type="button" class="btn-close" aria-label="Close" @onclick="Close"></button>
+                <EditForm Model="@newprod" OnSubmit="Close">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <p>
+                        <label style="align-content:center">
+                            Name:
+                            <InputText @bind-Value="newprod.Name" />
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Price:
+                            <InputNumber @bind-Value="newprod.Price" />
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Stoc:
+                            <InputNumber @bind-Value="newprod.Stoc" />
+                        </label>
+                        <label>
+                             Image:
+                             <InputFile OnChange="File" />
+                        </label>
+                    </p>
+                    <button class="btn btn-success" @onclick="@(() => Add(newprod))">Save</button>
+                    <button class="btn btn-primary" @onclick="@(() => Clear(newprod))">Cancel</button>
+                </EditForm>
+            </div>
         </div>
-
-        <form class="mt-5">
-
-            <div class="input-group input-group-md mb-2">
-                <span class="input-group-text">Name</span>
-                <input type="text" class="form-control" placeholder="Nume produs" required @bind-value=@newprod.Name />
-            </div>
-            <div class="input-group input-group-md mb-2">
-                <span class="input-group-text">Price</span>
-                <input type="number" class="form-control" placeholder="Pret produs" required @bind-value=@newprod.Price />
-            </div>
-            <div class="input-group input-group-md mb-2">
-                <span class="input-group-text ">Stoc</span>
-                <input type="number" class="form-control" placeholder="Stoc produs" required @bind-value=@newprod.Stoc />
-            </div>
-            <button class="btn btn-success" @onclick="@(() => Add(newprod))">Save</button>
-            <button class="btn btn-primary" @onclick="Close">Cancel</button>
-        </form>
     </div>
-</div>
-
+}
 @code {
     [Parameter]
     public Product newprod { get; set; }
@@ -43,9 +54,9 @@
     public EventCallback<bool> IsVisibleChanged { get; set; }
 
     [Parameter]
-    public string? HeaderText { get; set; }
+    public string HeaderText { get; set; }
 
-
+    private byte[] imgByte;
     public void Show(string headerText = "")
     {
         HeaderText = headerText;
@@ -59,6 +70,7 @@
         HeaderText = string.Empty;
         IsVisible = false;
         StateHasChanged();
+
     }
     private async Task Add(Product product)
     {
@@ -68,20 +80,26 @@
         }
         else
         {
-            using (var msg = await Http.PostAsJsonAsync<Product>("/api/products", product))
-
-                if (msg.IsSuccessStatusCode)
-                {
-                    product.Name = "";
-                    product.Price = product.Stoc = null;
-                }
+            await Http.PostAsJsonAsync<Product>("/api/products", product);
         }
-    }
-    private async Task Save(Product prod)
-    {
-        //PropertyInfo pinfo = typeof(Product).GetProperty(propField);
-        //pinfo.SetValue(prod, e.Value);
+        await IsVisibleChanged.InvokeAsync();
+        Clear(product);
 
-        await Http.PutAsJsonAsync<Product>($"/api/products/{prod.Id}", prod);
+    }
+    private void Clear(Product product)
+    {
+        product.Id = 0;
+        product.Name = "";
+        product.Price = product.Stoc = null;
+        Close();
+    }
+    private async Task File(InputFileChangeEventArgs e)
+    {
+        var format = "image/png";
+        var resizedImage = await e.File.RequestImageFileAsync(format, 200, 200);
+        var imgByte = new byte[resizedImage.Size];
+        await resizedImage.OpenReadStream().ReadAsync(imgByte);
+        var imageData = $"data:{format};base64,{Convert.ToBase64String(imgByte)}";
+        newprod.ImageName =imageData;
     }
 }

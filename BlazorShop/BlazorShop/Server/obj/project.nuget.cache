@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "83NaIiOnOso4qiiXLgJBAKfXR4oAfMRqJvRI673xBaWPuajqm+Ndumz+RndzSNFkK62gmdFsf4TxzYCCxHo2sA==",
+  "dgSpecHash": "bXPxqjNYczn8TrW70eLmGXPOpBwRXAN4EN81MjALnnUk2Z3KnvtaMK190fJUxW0QwJbM1sFvtpoc/VrrcoofRQ==",
   "success": true,
   "projectFilePath": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Server\\BlazorShop.Server.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\7.1.0\\blazored.modal.7.1.0.nupkg.sha512",
+    "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\6.0.1\\blazored.modal.6.0.1.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.10\\microsoft.aspnetcore.authorization.6.0.10.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.10\\microsoft.aspnetcore.components.6.0.10.nupkg.sha512",

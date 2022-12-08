@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "P5k2UPdubwR+swZs2kLyupGK/WrFkPBP5OGd4T4yg3o=",
+  "Hash": "ZYAYmFJMFz1Yz+UnTdCTs+PtUlTdJdbpaJ2oR8xgzp0=",
   "Source": "BlazorShop.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -17,29 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\7.1.0\\staticwebassets\\Blazored.Modal.bundle.scp.css",
+      "Identity": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\6.0.1\\staticwebassets\\blazored.modal.js",
       "SourceId": "Blazored.Modal",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\7.1.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\6.0.1\\staticwebassets\\",
       "BasePath": "_content/Blazored.Modal",
-      "RelativePath": "Blazored.Modal.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\7.1.0\\staticwebassets\\Blazored.Modal.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\7.1.0\\staticwebassets\\BlazoredModal.razor.js",
-      "SourceId": "Blazored.Modal",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\7.1.0\\staticwebassets\\",
-      "BasePath": "_content/Blazored.Modal",
-      "RelativePath": "BlazoredModal.razor.js",
+      "RelativePath": "blazored.modal.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -48,7 +31,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\7.1.0\\staticwebassets\\BlazoredModal.razor.js"
+      "OriginalItemSpec": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\6.0.1\\staticwebassets\\blazored.modal.js"
+    },
+    {
+      "Identity": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\6.0.1\\staticwebassets\\blazored-modal.css",
+      "SourceId": "Blazored.Modal",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\6.0.1\\staticwebassets\\",
+      "BasePath": "_content/Blazored.Modal",
+      "RelativePath": "blazored-modal.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\6.0.1\\staticwebassets\\blazored-modal.css"
     },
     {
       "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\blazor.boot.json",
@@ -99,7 +99,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\7.1.0\\lib\\net6.0\\Blazored.Modal.dll"
+      "OriginalItemSpec": "C:\\Users\\cabac\\.nuget\\packages\\blazored.modal\\6.0.1\\lib\\netstandard2.1\\Blazored.Modal.dll"
     },
     {
       "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BlazorShop.Client.dll",
@@ -5338,23 +5338,6 @@
       "OriginalItemSpec": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Threading.Timer.dll"
     },
     {
-      "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\obj\\Debug\\net6.0\\build-gz\\g2WMJLV5.gz",
-      "SourceId": "BlazorShop.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Blazored.Modal.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.Modal.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.Modal.dll"
-    },
-    {
       "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\obj\\Debug\\net6.0\\build-gz\\g3esnMkt.gz",
       "SourceId": "BlazorShop.Client",
       "SourceType": "Computed",
@@ -6288,6 +6271,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.AppContext.dll"
+    },
+    {
+      "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\obj\\Debug\\net6.0\\build-gz\\O++vSIpa.gz",
+      "SourceId": "BlazorShop.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.Modal.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.Modal.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.Modal.dll"
     },
     {
       "Identity": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\obj\\Debug\\net6.0\\build-gz\\O7g0Fs+p.gz",

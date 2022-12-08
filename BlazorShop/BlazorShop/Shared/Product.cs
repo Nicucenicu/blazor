@@ -22,7 +22,11 @@ namespace BlazorShop.Shared
           public int? Price { get; set; }
 
           [Required]
-          [Range(1, 100, ErrorMessage = "Pretul nu poate fi mai mic ca 0")]
+          [Range(1, 100, ErrorMessage = "Stocul nu poate fi mai mic ca 0")]
           public int? Stoc { get; set; }
+
+          public byte[] Image { get; set; }
+
+          public string ImageName { get; set; }
      }
 }
