@@ -1,0 +1,68 @@
+﻿@page "/cart"
+@using BlazorShop.Shared
+@using BlazorShop.Client.Pages
+@using System.Text.Json
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Cart</PageTitle>
+<h3>Cart</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Image</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in cart)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Quantity
+                <button @onclick="()=>Add(product,1)">+</button>
+                    <button @onclick="()=>Add(product,-1)">-</button>
+                </td>
+                <td><img src="@product.ImageName" /></td>
+                <button class="btn btn-success" style="background-color:darkred" @onclick="() => Delete(product.Id)">Delete</button>
+
+            </tr>
+        }
+        <tr>Total amount:@TotalAmount Mdl</tr>
+
+    </tbody>
+</table>
+
+@code {
+    private List<Product> cart;
+    private Product product;
+    private int? TotalAmount;
+    protected override async Task OnInitializedAsync()
+    {
+        var json = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "cart");
+        cart = JsonSerializer.Deserialize<List<Product>>(json);
+        TotalAmount = cart.Sum(p => p.Price * p.Quantity);
+
+
+    }
+    private async Task Delete(int id)
+    {
+        var removedItem = cart.Find(x => x.Id == id);
+        cart.Remove(removedItem);
+        var json = JsonSerializer.Serialize(cart);
+        await JSRuntime.InvokeAsync<object>("localStorage.setItem", "cart", json);
+    }
+    private async Task Add(Product product, int quantity)
+    {
+        if ((product.Quantity += quantity) <1) product.Quantity=1;
+        TotalAmount = cart.Sum(p => p.Price * p.Quantity);
+        var json = JsonSerializer.Serialize(cart);
+        await JSRuntime.InvokeAsync<object>("localStorage.setItem", "cart", json);
+
+    }
+}

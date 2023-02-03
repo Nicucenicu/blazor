@@ -18,8 +18,11 @@ namespace BlazorShop.Server.services
                if (product != null)
                {
                     product.Name = prod.Name;
+                    product.Description = prod.Description;
                     product.Price = prod.Price;
                     product.Stoc = prod.Stoc;
+                    product.Image=prod.Image;
+                    product.ImageName = prod.ImageName;
 
                     await db.SaveChangesAsync();
                }

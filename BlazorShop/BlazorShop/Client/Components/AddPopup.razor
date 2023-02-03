@@ -15,9 +15,15 @@
                     <DataAnnotationsValidator />
                     <ValidationSummary />
                     <p>
-                        <label style="align-content:center">
+                        <label>
                             Name:
                             <InputText @bind-Value="newprod.Name" />
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Description:
+                            <InputText @bind-Value="newprod.Description" />
                         </label>
                     </p>
                     <p>
@@ -31,10 +37,18 @@
                             Stoc:
                             <InputNumber @bind-Value="newprod.Stoc" />
                         </label>
+                    </p>
+                    <p>
                         <label>
-                             Image:
-                             <InputFile OnChange="File" />
+                            <InputFile OnChange="@((InputFileChangeEventArgs args) =>
+                                   File(newprod ,args))" />
+
                         </label>
+                        <div>
+                            <img src="@newprod.ImageName" />
+
+                        </div>
+
                     </p>
                     <button class="btn btn-success" @onclick="@(() => Add(newprod))">Save</button>
                     <button class="btn btn-primary" @onclick="@(() => Clear(newprod))">Cancel</button>
@@ -44,6 +58,7 @@
     </div>
 }
 @code {
+
     [Parameter]
     public Product newprod { get; set; }
 
@@ -56,7 +71,6 @@
     [Parameter]
     public string HeaderText { get; set; }
 
-    private byte[] imgByte;
     public void Show(string headerText = "")
     {
         HeaderText = headerText;
@@ -93,13 +107,13 @@
         product.Price = product.Stoc = null;
         Close();
     }
-    private async Task File(InputFileChangeEventArgs e)
+    private async Task File(Product product, InputFileChangeEventArgs e)
     {
         var format = "image/png";
         var resizedImage = await e.File.RequestImageFileAsync(format, 200, 200);
-        var imgByte = new byte[resizedImage.Size];
-        await resizedImage.OpenReadStream().ReadAsync(imgByte);
-        var imageData = $"data:{format};base64,{Convert.ToBase64String(imgByte)}";
-        newprod.ImageName =imageData;
+        product.Image = new byte[resizedImage.Size];
+        await resizedImage.OpenReadStream().ReadAsync(product.Image);
+        product.ImageName = $"data:{format};base64,{Convert.ToBase64String(product.Image)}";
     }
+
 }

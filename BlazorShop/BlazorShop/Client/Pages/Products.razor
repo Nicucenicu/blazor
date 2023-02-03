@@ -2,7 +2,7 @@
 @inject HttpClient Http
 @using BlazorShop.Shared
 @using BlazorShop.Client.Components
-
+<PageTitle>Products</PageTitle>
 <h1>
     Products
     <button class="btn btn-success" style="float:right" @onclick="RedirectPage">Add product</button>
@@ -41,6 +41,7 @@ else
                     <td>@prod.Name</td>
                     <td>@prod.Price</td>
                     <td>@prod.Stoc</td>
+                    <td><img src="@prod.ImageName"/></td>
                     <td>
                         <button class="btn btn-success" style="background-color:darkred" @onclick="@(() => Delete(prod.Id))">Delete</button>
                         <button class="btn btn-success" @onclick="@(() => EditPage(prod))">Edit</button>
@@ -59,7 +60,7 @@ else
     {
         popupRef.Show("Add product");
     }
-    private async Task EditPage(Product product)
+    private void EditPage(Product product)
     {
         prod = product;
         popupRef.Show("Edit product");
@@ -101,6 +102,6 @@ else
         prods = await Http.GetFromJsonAsync<List<Product>>("/api/products/list");
         StateHasChanged();
 
-    }
+    } 
 
 }

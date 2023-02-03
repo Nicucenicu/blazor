@@ -1,0 +1,73 @@
+﻿@using BlazorShop.Shared
+@inject HttpClient Http
+
+@if (IsVisible)
+{
+        <div class="popupCreate" style="opacity:0.9">
+            <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">@HeaderText</strong>
+                    <button type="button" class="btn-close" aria-label="Close" @onclick="Close"></button>
+                </div>
+                <div>
+                    <p>
+                        Name:@product.Name
+                    </p>
+                    <p>
+                        Description: @product.Description
+                    </p>
+                    <p>
+                        Price:@product.Price
+                    </p>
+                    <img style="text-align:center" src="@product.ImageName" />
+                <p>
+                     <label>
+                        Quantity:
+                    </label>
+                </p>
+                    <p>
+                        <button class="btn btn-success" @onclick="@(() => AddToCart(product))">Add to cart</button>
+                        <button class="btn btn-primary" @onclick="Close">Cancel</button>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    
+}
+@code {
+
+    [Parameter]
+    public Product product { get; set; }
+
+    [Parameter]
+    public bool IsVisible { get; set; } = false;
+
+    [Parameter]
+    public EventCallback<bool> IsVisibleChanged { get; set; }
+
+    [Parameter]
+    public string HeaderText { get; set; }
+
+    public void Show(string headerText = "")
+    {
+        HeaderText = headerText;
+        IsVisible = true;
+        StateHasChanged();
+
+    }
+
+    private void Close()
+    {
+        HeaderText = string.Empty;
+        IsVisible = false;
+        StateHasChanged();
+
+    }
+    private  void AddToCart(Product product)
+    {
+    
+
+    }
+
+}

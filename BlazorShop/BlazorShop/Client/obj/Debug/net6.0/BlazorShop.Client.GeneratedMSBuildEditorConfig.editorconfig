@@ -22,16 +22,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Components/EditPopup.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xFZGl0UG9wdXAucmF6b3I=
+[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Components/AddPopup.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRQb3B1cC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Components/ProductsDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0c0RldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Pages/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Pages/Index.razor]
@@ -49,10 +53,6 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
-
-[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Components/AddPopup.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRQb3B1cC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-cpp42vnm7p
 
 [D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

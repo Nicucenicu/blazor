@@ -18,6 +18,11 @@ namespace BlazorShop.Shared
           public string? Name { get; set; }
 
           [Required]
+          [Display(Name = "Descriere produs")]
+          [StringLength(150, ErrorMessage = "Descriere produs nu poate fi mai lung decat 150")]
+          public string Description { get; set; }
+
+          [Required]
           [Range(1,1000, ErrorMessage ="Pretul nu poate fi mai mic ca 0")]
           public int? Price { get; set; }
 
@@ -28,5 +33,7 @@ namespace BlazorShop.Shared
           public byte[] Image { get; set; }
 
           public string ImageName { get; set; }
+
+          public int Quantity { get; set; }
      }
 }

@@ -1831,5 +1831,4 @@ D:\utm\intern\BlazorShop1\BlazorShop\BlazorShop\Client\obj\Debug\net6.0\ref\Blaz
 D:\utm\intern\BlazorShop1\BlazorShop\BlazorShop\Client\bin\Debug\net6.0\wwwroot\_framework\Blazored.Modal.dll
 D:\utm\intern\BlazorShop1\BlazorShop\BlazorShop\Client\bin\Debug\net6.0\wwwroot\_framework\Blazored.Modal.dll.gz
 D:\utm\intern\BlazorShop1\BlazorShop\BlazorShop\Client\bin\Debug\net6.0\Blazored.Modal.dll
-D:\utm\intern\BlazorShop1\BlazorShop\BlazorShop\Client\obj\Debug\net6.0\scopedcss\Components\AddPopup.razor.rz.scp.css
 D:\utm\intern\BlazorShop1\BlazorShop\BlazorShop\Client\obj\Debug\net6.0\build-gz\O++vSIpa.gz

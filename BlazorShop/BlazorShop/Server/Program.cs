@@ -16,7 +16,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<IShopService,ShopService>();
-builder.Services.AddBlazoredModal();
 
 var app = builder.Build();
 

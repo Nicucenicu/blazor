@@ -2,8 +2,6 @@
 using BlazorShop.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System.Runtime.InteropServices;
 
 namespace BlazorShop.Server.Controllers
 {
