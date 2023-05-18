@@ -6,7 +6,12 @@
 
 <PageTitle>Cart</PageTitle>
 <h3>Cart</h3>
-
+@if (cart == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
 <table class="table">
     <thead>
         <tr>
@@ -25,11 +30,11 @@
                 <td>@product.Name</td>
                 <td>@product.Price</td>
                 <td>@product.Quantity
-                <button @onclick="()=>Add(product,1)">+</button>
-                    <button @onclick="()=>Add(product,-1)">-</button>
+                    <button @onclick="@(()=>Add(product,1))">+</button>
+                    <button @onclick="@(()=>Add(product,-1))">-</button>
                 </td>
                 <td><img src="@product.ImageName" /></td>
-                <button class="btn btn-success" style="background-color:darkred" @onclick="() => Delete(product.Id)">Delete</button>
+                <button class="btn btn-success" style="background-color:darkred" @onclick="@(() => Delete(product.Id))">Delete</button>
 
             </tr>
         }
@@ -37,6 +42,7 @@
 
     </tbody>
 </table>
+}
 
 @code {
     private List<Product> cart;
@@ -54,6 +60,7 @@
     {
         var removedItem = cart.Find(x => x.Id == id);
         cart.Remove(removedItem);
+        TotalAmount = cart.Sum(p => p.Price * p.Quantity);
         var json = JsonSerializer.Serialize(cart);
         await JSRuntime.InvokeAsync<object>("localStorage.setItem", "cart", json);
     }

@@ -1,0 +1,52 @@
+﻿@page "/login"
+@using BlazorShop.Shared
+@using System.Text.Json
+@inject HttpClient http
+
+<h3>Login</h3>
+<EditForm Model="user" OnSubmit="HandleRegister">
+    <label for="username">Name</label>
+    <InputText id="username" @bind-Value="user.Email" />
+
+
+    <label for="password">Password</label>
+    <InputText id="password" @bind-Value="user.Password" type="password" />
+
+    <label for="password">Password</label>
+    <InputText id="password" @bind-Value="user.ConfirmPassword" type="password" />
+
+    <button type="submit" class="btn-primary">Do it</button>
+
+</EditForm>
+<EditForm Model="user1" OnSubmit="HandleLogin">
+    <label for="username">Name</label>
+    <InputText id="username" @bind-Value="user1.Email" />
+
+
+    <label for="password">Password</label>
+    <InputText id="password" @bind-Value="user1.Password" type="password" />
+
+    <button type="submit" class="btn-primary">Do it</button>
+
+</EditForm>
+
+
+
+@code {
+    UserLoginDto user1 = new UserLoginDto();
+    UserRegisterDto user = new UserRegisterDto();
+
+    async Task HandleRegister()
+    {
+        await http.PostAsJsonAsync<UserRegisterDto>("register", user);
+
+
+    }
+
+    async Task HandleLogin()
+    {
+        await http.PostAsJsonAsync<UserLoginDto>("Login", user1);
+
+    }
+
+}

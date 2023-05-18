@@ -5,10 +5,8 @@ build_property.UsingMicrosoftNETSdkWeb =
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = false
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = browser
-build_property.EnableSingleFileAnalyzer = 
-build_property.EnableTrimAnalyzer = true
-build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = BlazorShop.Client
 build_property.RootNamespace = BlazorShop.Client
 build_property.ProjectDir = D:\utm\intern\BlazorShop1\BlazorShop\BlazorShop\Client\
@@ -30,16 +28,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0c0RldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/NotAuthorized.razor]
+build_metadata.AdditionalFiles.TargetPath = Tm90QXV0aG9yaXplZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Pages/Cart.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/utm/intern/BlazorShop1/BlazorShop/BlazorShop/Client/Pages/Products.razor]

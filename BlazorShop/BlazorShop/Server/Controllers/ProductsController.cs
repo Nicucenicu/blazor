@@ -21,7 +21,7 @@ namespace BlazorShop.Server.Controllers
           [HttpPut("{id}")]
           public async Task<Product> Edit(int id, Product prod)
           {
-              return await _shopService.Edit(id, prod);
+               return await _shopService.Edit(id, prod);
           }
 
           [HttpDelete("{id}")]
@@ -31,7 +31,7 @@ namespace BlazorShop.Server.Controllers
           }
 
           [HttpPost]
-          public async Task<Product> Post( Product create)
+          public async Task<Product> Post(Product create)
           {
                return await _shopService.Post(create);
           }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qVGVWEhUU8W6TRwUy+EeBvzMDX1zCns+lBtIisUSlKzsN7/mEkMZxyCpq+pkf+uZzOl8EmrvXNqDILkTOVqECA==",
+  "dgSpecHash": "C86Y3nyz7wxKKNNgcjJtw2R6Yy2IADLKax/bwX3yHDQdYa9BTsmdkfw2kcVMWmMfSNj3F2BDi+xM2Jb/NzKtUw==",
   "success": true,
   "projectFilePath": "D:\\utm\\intern\\BlazorShop1\\BlazorShop\\BlazorShop\\Client\\BlazorShop.Client.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.10\\microsoft.aspnetcore.authorization.6.0.10.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.10\\microsoft.aspnetcore.components.6.0.10.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.10\\microsoft.aspnetcore.components.analyzers.6.0.10.nupkg.sha512",
+    "C:\\Users\\cabac\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\6.0.10\\microsoft.aspnetcore.components.authorization.6.0.10.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\6.0.10\\microsoft.aspnetcore.components.forms.6.0.10.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.aspnetcore.components.web\\6.0.10\\microsoft.aspnetcore.components.web.6.0.10.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.10\\microsoft.aspnetcore.components.webassembly.6.0.10.nupkg.sha512",
@@ -24,6 +25,7 @@
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.10\\microsoft.entityframeworkcore.relational.6.0.10.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.10\\microsoft.entityframeworkcore.sqlserver.6.0.10.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.10\\microsoft.entityframeworkcore.tools.6.0.10.nupkg.sha512",
+    "C:\\Users\\cabac\\.nuget\\packages\\microsoft.exchange.webservices\\2.2.0\\microsoft.exchange.webservices.2.2.0.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
@@ -69,7 +71,18 @@
     "C:\\Users\\cabac\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
     "C:\\Users\\cabac\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\cabac\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.10\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.10.nupkg.sha512"
+    "C:\\Users\\cabac\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.16\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.16.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Exchange.WebServices 2.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Exchange.WebServices",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

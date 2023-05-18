@@ -8,7 +8,12 @@
 
 <PageTitle>Home</PageTitle>
 <h1>Shop</h1>
-
+@if (prods == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
 <div class="row">
     @foreach (var product in prods)
     {
@@ -20,12 +25,13 @@
                     <h5 class="card-title">@product.Name @product.Price MDL</h5>
                     <p class="card-text">@product.Description</p>
                     <input type="number" style="width=50px" min="1"  @bind-value="@product.Quantity">
-                    <button @onclick="() => AddToCart(product)" class="btn btn-primary">Add to Cart</button>
+                    <button @onclick="@(() => AddToCart(product))" class="btn btn-primary">Add to Cart</button>
                 </div>
             </div>
         </div>
     }
 </div>
+}
 
 
 @code {

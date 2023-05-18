@@ -14,42 +14,33 @@
                 <EditForm Model="@newprod" OnSubmit="Close">
                     <DataAnnotationsValidator />
                     <ValidationSummary />
-                    <p>
-                        <label>
+                    <div class="editform">
+                        <p>
                             Name:
                             <InputText @bind-Value="newprod.Name" />
-                        </label>
-                    </p>
-                    <p>
-                        <label>
+                        </p>
+                        <p>
                             Description:
                             <InputText @bind-Value="newprod.Description" />
-                        </label>
-                    </p>
-                    <p>
-                        <label>
+                        </p>
+                        <p>
                             Price:
                             <InputNumber @bind-Value="newprod.Price" />
-                        </label>
-                    </p>
-                    <p>
-                        <label>
+                        </p>
+                        <p>
                             Stoc:
                             <InputNumber @bind-Value="newprod.Stoc" />
-                        </label>
-                    </p>
-                    <p>
-                        <label>
+                        </p>
+                        <p style="text-align-last:auto">
                             <InputFile OnChange="@((InputFileChangeEventArgs args) =>
                                    File(newprod ,args))" />
+                            <div>
+                                <img src="@newprod.ImageName" />
 
-                        </label>
-                        <div>
-                            <img src="@newprod.ImageName" />
+                            </div>
 
-                        </div>
-
-                    </p>
+                        </p>
+                    </div>
                     <button class="btn btn-success" @onclick="@(() => Add(newprod))">Save</button>
                     <button class="btn btn-primary" @onclick="@(() => Clear(newprod))">Cancel</button>
                 </EditForm>
@@ -103,7 +94,7 @@
     private void Clear(Product product)
     {
         product.Id = 0;
-        product.Name = "";
+        product.Name = product.Description = product.ImageName = "";
         product.Price = product.Stoc = null;
         Close();
     }

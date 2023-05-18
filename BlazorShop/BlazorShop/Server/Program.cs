@@ -1,10 +1,13 @@
 using Blazored.Modal;
 using BlazorShop.Server;
 using BlazorShop.Server.services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +18,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
-builder.Services.AddTransient<IShopService,ShopService>();
+builder.Services.AddScoped<IShopService,ShopService>();
+builder.Services.AddScoped<ILoginService, LoginService>();
+
 
 var app = builder.Build();
 
@@ -23,6 +28,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
      app.UseWebAssemblyDebugging();
+
 }
 else
 {
@@ -38,6 +44,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
+
+app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapControllers();
